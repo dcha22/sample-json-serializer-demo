@@ -21,8 +21,8 @@ public class TeaHttpConverterConfiguration {
 		Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder()
 								.serializers(LOCAL_DATETIME_SERIALIZER)
 								.serializers(LOCAL_DATE_SERIALIZER)
-								.serializationInclusion(JsonInclude.Include.NON_NULL)
-								.propertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE)
+								//.serializationInclusion(JsonInclude.Include.NON_NULL)
+								//.propertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE)
 								.simpleDateFormat("dd-MM-yy HH:mm");
 		
 		

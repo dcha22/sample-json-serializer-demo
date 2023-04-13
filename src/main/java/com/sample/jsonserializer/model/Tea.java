@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 // You can add a custom Serializer at the class level as below
 
-@JsonSerialize(using = TeaCustomSerializer.class)
+//@JsonSerialize(using = TeaCustomSerializer.class)
 public class Tea {
 	private String teaName;
 	private String teaType;

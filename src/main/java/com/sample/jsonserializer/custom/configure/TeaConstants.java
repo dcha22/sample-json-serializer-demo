@@ -9,7 +9,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 
 public class TeaConstants {
-	public static final String DATETIME_FORMAT = "dd-MM-yyyy HH:mm:ss";
+	public static final String DATETIME_FORMAT = "dd-MM-yyyy HH";
 	
 	public static final LocalDateTime FIXED_DATE = LocalDateTime.now();
 	
