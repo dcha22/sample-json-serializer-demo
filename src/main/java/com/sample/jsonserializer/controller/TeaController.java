@@ -24,6 +24,12 @@ public class TeaController {
 		return "Hi from my Tea world";
 	}
 	
+	/**
+	 * Method Description: 
+	 * @param name
+	 * @param model
+	 * @return
+	 */
 	@GetMapping("/greeting2") 
 	public String greeting2(
 			@RequestParam(name="name", required=false, defaultValue = "INDIA")  

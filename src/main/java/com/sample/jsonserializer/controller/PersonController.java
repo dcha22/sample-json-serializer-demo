@@ -19,6 +19,14 @@ import com.sample.jsonserializer.model.Person;
 @RequestMapping("/demo2")
 public class PersonController {
 	
+	/**
+	 * Describe the functionality..
+	 * 
+	 * @param firstName
+	 * @param lastName
+	 * @param age
+	 * @return
+	 */
 	@GetMapping("/person") 
 	public ResponseEntity<com.sample.jsonserializer.model.Person> getPerson(
 			@RequestParam (required = false) String firstName, 
@@ -35,6 +43,11 @@ public class PersonController {
 		return new ResponseEntity<>(_person, HttpStatus.OK);
 	}
 	
+	/**
+	 * Method description.....
+	 * @param person
+	 * @return
+	 */
 	@RequestMapping("/person")
 	public ResponseEntity<Person> savePerson (@RequestBody Person person) {
 		return new ResponseEntity<>(person, HttpStatus.OK);
