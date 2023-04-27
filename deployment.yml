@@ -1,0 +1,38 @@
+apiVersion: v1 # Kubernetes API version
+kind: Service # Kubernetes resource kind we are creating
+metadata: # Metadata of the resource kind we are creating
+  name: spring-test-service
+spec:
+  selector:
+    app: sample-json-serializer-demo
+  ports:
+    - protocol: "TCP"
+      port: 8080 # The port that the service is running on in the cluster
+      targetPort: 8080 # The port exposed by the service
+  type: LoadBalancer # type of the service. LoadBalancer indicates that our service will be external.
+---
+##apiVersion: extensions/v1beta1
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-json-serializer-demo
+spec:
+  #replicas: 2
+  selector:
+    matchLabels:
+      app: sample-json-serializer-demo
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        app: sample-json-serializer-demo
+    spec:
+      containers:
+      - name: sample-json-serializer-demo
+        #image: registry.gitlab.com/dcha22/sample-json-serializer-demo
+        image: registry.gitlab.com/javaprojects7254815/sample-json-serializer-demo
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+        - name: registry.gitlab.com

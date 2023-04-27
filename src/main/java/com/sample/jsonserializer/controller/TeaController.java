@@ -7,6 +7,7 @@ import java.util.Date;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,6 +22,14 @@ public class TeaController {
 	@GetMapping("/greeting") 
 	public String greeting() {
 		return "Hi from my Tea world";
+	}
+	
+	@GetMapping("/greeting2") 
+	public String greeting2(
+			@RequestParam(name="name", required=false, defaultValue = "INDIA")  
+			String name, Model model) {
+		model.addAttribute("name", name);
+		return "greetings..";
 	}
 	
 	@RequestMapping("/tea")
